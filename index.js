@@ -16,6 +16,7 @@ const Blog = mongoose.model('Blog', blogSchema)
 const mongoUrl = process.env.MONGODB_URI
 mongoose.connect(mongoUrl)
 
+
 app.use(express.json())
 
 app.get('/api/blogs', (request, response) => {
@@ -31,6 +32,10 @@ app.post('/api/blogs', (request, response) => {
     response.status(201).json(result)
   })
 })
+
+//logger.info(`Server running on port ${config.PORT}`)
+
+console.log(`Server running on port 3003`)
 
 const PORT = 3003
 app.listen(PORT, () => {
